@@ -1,0 +1,11 @@
+<div *ngIf="gameFeed.length === 0">
+  <p>No games were found</p>
+</div>
+
+<div *ngIf="gameFeed.length > 0" class="flex">
+  <div *ngFor="let game of gameFeed" class="box">
+    <div *ngIf="utils.isNewGame(game)" class="ribbon"><span>TOP</span></div>
+    <div *ngIf="utils.isTopGame(game)" class="ribbon"><span>NEW</span></div>
+    <img src="{{game.image}}" width="160" height="150"/>
+  </div>
+</div>
